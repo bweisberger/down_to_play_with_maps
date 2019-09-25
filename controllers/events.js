@@ -137,6 +137,7 @@ router.post("/", async (req, res) => {
     // console.log(req.body, ' req.body in post route')
     // console.log(req.session.userId, 'req.session.userId')
     req.body.host = req.session.userId;
+    // req.body.location = JSON.stringify({ lat: 0, lng: 0 });
     console.log(req.body, "req.body in post route for events");
     // console.log(req.body.host, " req.body.host in post route")
     const createdEvent = await Event.create(req.body);

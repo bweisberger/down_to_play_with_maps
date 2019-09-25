@@ -160,7 +160,7 @@
           // Create the search box and link it to the UI element.
           const input = document.getElementById("pac-input");
           const searchBox = new google.maps.places.SearchBox(input);
-          map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+          //   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
           // Bias the SearchBox results towards current map's viewport.
           map.addListener("bounds_changed", function() {
@@ -172,7 +172,9 @@
           // more details for that place.
           searchBox.addListener("places_changed", function() {
             const places = searchBox.getPlaces();
-            console.log(places[0].geometry.location.lat(), "<--places");
+            console.log(places[0].geometry.location, "<--places");
+            // console.log(req.body, "<--req.body in new.ejs");
+            // console.log(res.locals, "<--res.locals in new.ejs");
 
             if (places.length == 0) {
               return;
